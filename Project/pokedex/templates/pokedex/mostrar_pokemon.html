@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Pokemon</title>
+</head>
+<body>
+    <h1>Meus Pokemons</h1>
+
+    {% for p in pokemons %}
+        <div>
+            <h2>{{ p.nome }}</h2>
+            <img src="{{ p.imagem }}" alt="Imagem do {{ p.nome }}">
+            <p>Altura do {{ p.nome }}: {{ p.altura }}</p>
+        </div>
+        {% empty %}
+            <p>Nenhum Pokémon encontrado no banco de dados.</p>
+        {% endfor %}
+</body>
+</html>
